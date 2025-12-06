@@ -21,6 +21,11 @@ builder.Services.AddScoped<IGrupoSocialRepository, GrupoSocialRepository>();
 builder.Services.AddScoped<IGrupoSocialService, GrupoSocialService>();
 
 
+builder.Services.AddScoped<IRecorridoRepository, RecorridoRepository>();
+builder.Services.AddScoped<IRecorridoService, RecorridoService>();
+
+
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
