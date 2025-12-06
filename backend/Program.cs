@@ -27,6 +27,8 @@ builder.Services.AddScoped<IRecorridoRepository, RecorridoRepository>();
 builder.Services.AddScoped<IRecorridoService, RecorridoService>();
 builder.Services.AddScoped<IVentajaRepository, VentajaRepository>();
 builder.Services.AddScoped<IVentajaService, VentajaService>();
+builder.Services.AddScoped<IRunnerVentajaRepository, RunnerVentajaRepository>();
+builder.Services.AddScoped<IRunnerVentajaService, RunnerVentajaService>();
 
 
 

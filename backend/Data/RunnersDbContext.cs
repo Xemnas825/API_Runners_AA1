@@ -14,6 +14,14 @@ namespace RunnerApi.Data
         public DbSet<Carrera> Carreras { get; set; }
         public DbSet<Recorrido> Recorridos { get; set; }
         public DbSet<Ventaja> Ventajas { get; set; }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<RunnerVentaja>().HasKey(rv => new { rv.RunnerId, rv.VentajaId });
+        }
+
 
     }
+
+    
 }
