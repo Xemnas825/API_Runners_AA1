@@ -11,5 +11,7 @@ namespace RunnerApi.Data
         public DbSet<Runner> Runners { get; set; }
         public DbSet<GrupoSocial> GruposSociales { get; set; }
         public DbSet<Clasificacion> Clasificaciones { get; set; }
+        public DbSet<Carrera> Carreras { get; set; }
+        public DbSet<Recorrido> Recorridos { get; set; }
     }
 }

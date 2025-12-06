@@ -24,6 +24,11 @@ builder.Services.AddScoped<IClasificacionService, ClasificacionService>();
 
 
 
+builder.Services.AddScoped<IRecorridoRepository, RecorridoRepository>();
+builder.Services.AddScoped<IRecorridoService, RecorridoService>();
+
+
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
