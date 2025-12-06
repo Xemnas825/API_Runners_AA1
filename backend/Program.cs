@@ -19,6 +19,9 @@ builder.Services.AddScoped<IRunnerRepository, RunnerRepository>();
 builder.Services.AddScoped<IRunnerService, RunnerService>();
 builder.Services.AddScoped<IGrupoSocialRepository, GrupoSocialRepository>();
 builder.Services.AddScoped<IGrupoSocialService, GrupoSocialService>();
+builder.Services.AddScoped<IClasificacionRepository, ClasificacionRepository>();
+builder.Services.AddScoped<IClasificacionService, ClasificacionService>();
+
 
 
 builder.Services.AddControllers();
