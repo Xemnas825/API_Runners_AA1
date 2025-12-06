@@ -1,0 +1,6 @@
+@Api_Eva1_HostAddress = http://localhost:5136
+
+GET {{Api_Eva1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using RunnerApi.Models;
+
+namespace RunnerApi.Data
+{
+    public class RunnersDbContext : DbContext
+    {
+        public RunnersDbContext(DbContextOptions<RunnersDbContext> options)
+            : base(options) { }
+
+        public DbSet<Runner> Runners { get; set; }
+    }
+}
