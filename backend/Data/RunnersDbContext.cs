@@ -9,5 +9,6 @@ namespace RunnerApi.Data
             : base(options) { }
 
         public DbSet<Runner> Runners { get; set; }
+        public DbSet<GrupoSocial> GruposSociales { get; set; }
     }
 }

@@ -17,6 +17,9 @@ builder.Services.AddDbContext<RunnersDbContext>(options =>
 
 builder.Services.AddScoped<IRunnerRepository, RunnerRepository>();
 builder.Services.AddScoped<IRunnerService, RunnerService>();
+builder.Services.AddScoped<IGrupoSocialRepository, GrupoSocialRepository>();
+builder.Services.AddScoped<IGrupoSocialService, GrupoSocialService>();
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
