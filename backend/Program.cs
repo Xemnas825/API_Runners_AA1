@@ -21,11 +21,13 @@ builder.Services.AddScoped<IGrupoSocialRepository, GrupoSocialRepository>();
 builder.Services.AddScoped<IGrupoSocialService, GrupoSocialService>();
 builder.Services.AddScoped<IClasificacionRepository, ClasificacionRepository>();
 builder.Services.AddScoped<IClasificacionService, ClasificacionService>();
-
-
-
+builder.Services.AddScoped<ICarreraRepository, CarreraRepository>();
+builder.Services.AddScoped<ICarreraService, CarreraService>();
 builder.Services.AddScoped<IRecorridoRepository, RecorridoRepository>();
 builder.Services.AddScoped<IRecorridoService, RecorridoService>();
+builder.Services.AddScoped<IVentajaRepository, VentajaRepository>();
+builder.Services.AddScoped<IVentajaService, VentajaService>();
+
 
 
 

@@ -13,5 +13,7 @@ namespace RunnerApi.Data
         public DbSet<Clasificacion> Clasificaciones { get; set; }
         public DbSet<Carrera> Carreras { get; set; }
         public DbSet<Recorrido> Recorridos { get; set; }
+        public DbSet<Ventaja> Ventajas { get; set; }
+
     }
 }
