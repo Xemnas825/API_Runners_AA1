@@ -1,3 +1,4 @@
+using System.Linq;
 using RunnerApi.Interfaces;
 using RunnerApi.Models;
 using RunnerApi.DTOs;
@@ -16,7 +17,7 @@ namespace RunnerApi.Services
         public async Task<IEnumerable<RunnerDTO>> GetAllAsync()
             => (await _repo.GetAllAsync()).Select(ToDTO);
 
-        public async Task<RunnerDTO> GetByIdAsync(int id)
+        public async Task<RunnerDTO?> GetByIdAsync(int id)
         {
             var r = await _repo.GetByIdAsync(id);
             return r == null ? null : ToDTO(r);
@@ -29,12 +30,12 @@ namespace RunnerApi.Services
             return ToDTO(result);
         }
 
-        public async Task<RunnerDTO> UpdateAsync(int id, RunnerDTO dto)
+        public async Task<RunnerDTO?> UpdateAsync(int id, RunnerDTO dto)
         {
             var entity = FromDTO(dto);
             entity.Id = id;
             var result = await _repo.UpdateAsync(entity);
-            return ToDTO(result);
+            return result == null ? null : ToDTO(result);
         }
 
         public async Task<bool> DeleteAsync(int id)

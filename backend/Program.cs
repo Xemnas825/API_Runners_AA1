@@ -10,14 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<RunnersDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("RunnersDB"),
-        new MySqlServerVersion(new Version(8, 0, 44)),
+        builder.Configuration.GetConnectionString("RunnersDB"), //
+        new MySqlServerVersion(new Version(8, 0, 44)), //
         mySqlOptions => mySqlOptions.EnableRetryOnFailure(
             maxRetryCount: 5,
             maxRetryDelay: TimeSpan.FromSeconds(10),
             errorNumbersToAdd: null
         )
     )
+    .UseSnakeCaseNamingConvention()
 );
 
 builder.Services.AddScoped<IRunnerRepository, RunnerRepository>();

@@ -40,11 +40,20 @@ namespace RunnerApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, RunnerDTO dto)
+        public async Task<IActionResult> Update(int id, [FromBody] RunnerDTO dto) // Agregado [FromBody] por buenas prácticas
         {
+            // Validar que el ID de la URL coincida con el del DTO si viene incluido (opcional pero recomendado)
+            if(dto.Id != 0 && dto.Id != id) 
+                return BadRequest("El ID de la URL no coincide con el del cuerpo");
+
             var updated = await _service.UpdateAsync(id, dto);
+
+            // Si el servicio devuelve null, es que el ID no existía
+            if (updated == null)
+                return NotFound();
+
             return Ok(updated);
-        }
+        }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)

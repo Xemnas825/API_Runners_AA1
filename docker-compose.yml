@@ -34,7 +34,7 @@ services:
       MYSQL_ROOT_PASSWORD: MyPassW0rD!
       MYSQL_DATABASE: RunnerDB
     ports:
-      - "1488:3306"
+      - "2292:3306"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./dbScripts:/docker-entrypoint-initdb.d:ro
