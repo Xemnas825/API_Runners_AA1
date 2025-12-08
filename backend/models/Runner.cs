@@ -7,7 +7,7 @@ namespace RunnerApi.Models
         public string Apellido { get; set; }
         public string Dni { get; set; }
         public string Correo { get; set; }
-        public string Contraseña { get; set; }
+        public string Contrasena { get; set; }
         public bool Valido { get; set; }
         public int? GrupoId { get; set; }
     }

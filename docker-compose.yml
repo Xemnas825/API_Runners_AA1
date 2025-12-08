@@ -1,0 +1,48 @@
+﻿
+services:
+  web:
+    image: nginx:1.29.3
+    container_name: Frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_PORT=80
+
+  runner-api:
+    container_name: runner-api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__RunnersDB=server=runner-mysql;port=3306;database=RunnerDB;uid=root;pwd=MyPassW0rD!;
+    volumes:
+      - ./logs:/logs
+    depends_on:
+      - runner-mysql
+    restart: unless-stopped
+
+  runner-mysql:
+    image: mysql:8.0
+    container_name: runner-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: MyPassW0rD!
+      MYSQL_DATABASE: RunnerDB
+    ports:
+      - "1488:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./dbScripts:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pMyPassW0rD!"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  mysql_data:

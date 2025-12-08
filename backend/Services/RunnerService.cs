@@ -47,7 +47,7 @@ namespace RunnerApi.Services
             Apellido = r.Apellido,
             Dni = r.Dni,
             Correo = r.Correo,
-            Contraseña = r.Contraseña,
+            Contrasena = r.Contrasena,
             Valido = r.Valido,
             GrupoId = r.GrupoId
         };
@@ -58,7 +58,7 @@ namespace RunnerApi.Services
             Apellido = dto.Apellido,
             Dni = dto.Dni,
             Correo = dto.Correo,
-            Contraseña = dto.Contraseña,
+            Contrasena = dto.Contrasena,
             Valido = dto.Valido,
             GrupoId = dto.GrupoId
         };

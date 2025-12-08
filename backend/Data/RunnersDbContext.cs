@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RunnerApi.Models;
 
 namespace RunnerApi.Data
@@ -11,7 +11,6 @@ namespace RunnerApi.Data
         public DbSet<Runner> Runners { get; set; }
         public DbSet<GrupoSocial> GruposSociales { get; set; }
         public DbSet<Clasificacion> Clasificaciones { get; set; }
-        public DbSet<Carrera> Carreras { get; set; }
         public DbSet<Recorrido> Recorridos { get; set; }
         public DbSet<Ventaja> Ventajas { get; set; }
 
